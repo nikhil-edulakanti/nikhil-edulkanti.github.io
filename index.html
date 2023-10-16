@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/2/style.css">
+</head>
+<body>
+    <article>
+    <h1 class="headings" >CS552 Paper Reflection: Towards Scalable<br>
+        Resource Management for Supercomputers</h1>
+        <h1 class="headings">Sai Nikhil Edulakanti</h1>
+        <h4 class="headings">I. SUMMARY</h4>
+        <p >The paper ”Towards Scalable Resource Management for Supercomputers” discusses the need for a
+            better resource management system in an HPC environment. A resource manager helps the HPC system
+            to schedule batch jobs, and allocate resources such as nodes for the smooth execution of an HPC system.
+            One such example used in this paper is SLURM (Simple LINUX Utility Resource Management) which
+            is basically a job and resource scheduler in an HPC environment. The existing system SLURM is a
+            centralized system that operates on a master node, and this gives out instructions to other nodes in the
+            system. There is always a chance of the master node failing due to excessive overhead communication
+            and this results in poor results such as increased time in job and resource allocations. The authors have
+            suggested ”ESLURM”, a new approach to resource management which is an advancement to the existing
+            SLURM. The ESLURM has a distributed structure that uses satellite nodes along with the master node,
+            which makes the existing system achieve better scalability. This paper has shown how the new system
+            can help boost the performance of an HPC environment.</p>
+        <h4 class="headings" >II. KEY TAKEAWAYS</h4>
+        <p >The new system ESLURM can achieve better performance and scalability by using satellite nodes and
+            a failure prediction system. The master node in an ESLURM only communicates with a small series of
+            satellite nodes, and these satellite nodes communicate with a number of nodes through broadcasting. This
+            way the master node will have low overhead communication as it would communicate with less number
+            of nodes compared to the traditional system where the master node communicates with all the nodes in
+            the system for scheduling jobs and resource allocations.<br>
+        <div class="side">
+                <img src="./images/res1.png">
+                <img  src="./images/res2.png">
+        </div>
+            
+            
+            <p>
+            This can be achieved by constructing an FP-tree(failure prediction tree), when the master node broad-casts the required resources to the satellite nodes, these nodes dynamically construct a tree that has layers
+            of nodes that are interconnected in the structure of a tree. This way the nodes are interconnected and
+            communicate effectively with one another.<br>
+            The tree structure can also help in predicting the failure of a node, and when a failure occurs the
+            parent node can reallocate the resources to another leaf node in the tree. This process can help reduce
+            the latency in case the node fails. ELSURM uses the existing infrastructure to identify nodes performing
+            abnormally and can help in predicting a node failure.
+            The authors emphasized the lead time, this is basically the time elapsed between manifesting a failure
+            and the actual happening of the failure. The more the lead time, the better chance of avoiding failure.
+            The lead time can be increased by identifying root causes and diagnosing them so we can find an
+            effective solution that helps clear out the manifested failure. The logs can also help in co-relating various
+            happenings in an HPC system and we can draw a conclusion on what actually caused a failure, it can
+            be a single event or a series of events.<br>
+            The data on the logs can be used to find indications for upcoming failures, like overheating, which
+            can cause the hardware to fail and can be an indication that the node is going to fail. This type of
+            indication can help the user to predict the failure beforehand, and the user can act accordingly to reduce
+            the frequency of a failure.<br>
+            The authors analyzed failures caused internally like having an invalid operational code where the
+            exceptional handling disturbs the entire file system and causes a failure. Similarly, nodes sharing the
+            same applications tend to fail at the same time due to the same root cause.
+            There are also some failures caused by excessive workload which is self-explanatory.    
+        
+        </p>
+        <img src="./images/res3.png">
+        <h4 class="headings">III. OVERLAP WITH CS552</h4>
+        <p>Node failure is a common occurrence, and there are clear chances that I might actually experience
+            one while working on CS552 assignments. This paper has shown me different factors that might actually
+            affect node failures. The authors have worked on various monitoring and modeling techniques and these
+            techniques showed me how the simulation models can be used to understand the impact of the failed
+            nodes.
+            This paper made me realize the importance of designing and managing HPC systems and the factors
+            that affect the overall performance and reliability of a system.<br>
+            
+            
+            
+            In the CS552 course, we use SLURM to schedule jobs and allocate resources. We use this system in
+            the HPC environment monsoon. The course has shown how we can schedule jobs and write a job script
+            using SLURM. This paper has shown how the technology we use can be improved by adding different
+            prediction models and thus boosting the overall performance and scalability.
+            </p>
+        <h4  class="headings">IV. FUTURE WORK</h4>
+        <p>Supercomputers and distributed environments are always evolving and there is always a scope that the
+            existing system that can be developed.<br>
+            We can include cloud-based allocation in this system which can help in quick allocations of jobs and
+            resources. Inclusion of machine learning algorithms that can predict the failures way earlier can help in
+            reducing the latency in allocation and can improve the overall scalability.<br>
+            There is always a scope to improve the existing prediction system. Future work could be developing
+            more advanced techniques for preventing and predicting node failures. This can improve the lead time
+            drastically and this way there would be less number of node failures in an HPC environment.<br>
+            This particular study can be considered an important research area that aims to develop efficient and
+            effective methods for identifying and diagnosing node failures that helps in improving overall efficiency
+            and costs.  
+            </p>
+        <h4 class="headings">V. REFERENCES</h4>
+        <ol><li> Dai, Y. Dong, K. Lu, R. Wang, W. Zhang, J. Chen, M. Shao, and Z. Wang, “Towards scalable resource management for
+            supercomputers,” in SC22: International Conference for High Performance Computing, Networking, Storage and Analysis,
+            2022, pp. 1–15</li>
+            <li> A. Das, F. Mueller, and B. Rountree, “Systemic assessment of node failures in hpc production platforms,” in 2021 IEEE
+                International Parallel and Distributed Processing Symposium (IPDPS), 2021, pp. 267–276.</li>
+            <li>W. Shin, V. Oles, A. M. Karimi, J. A. Ellis, and F. Wang, “Revealing
+                power, energy and thermal dynamics of a 200pf pre-exascale
+                supercomputer,” in Proceedings of the International Conference for
+                High Performance Computing, Networking, Storage and Analysis, ser.
+                SC ’21. New York, NY, USA: Association for Computing Machinery,
+                2021. [Online]. Available: https://doi.org/10.1145/3458817.3476188</li>
+            <li> K. Yoshikawa, S. Tanaka, and N. Yoshida, “A 400 trillion-grid
+                vlasov simulation on fugaku supercomputer: large-scale distribution
+                of cosmic relic neutrinos in a six-dimensional phase space,”
+                in SC ’21: The International Conference for High Performance
+                Computing, Networking, Storage and Analysis, St. Louis, Missouri,
+                USA, November 14 - 19, 2021, B. R. de Supinski, M. W. Hall, and
+                T. Gamblin, Eds. ACM, 2021, pp. 5:1–5:11. [Online]. Available:
+                https://doi.org/10.1145/3458817.3487401</li>
+            <li>Q. Zhu, H. Luo, C. Yang, M. Ding, W. Yin, and X. Yuan,
+                “Enabling and scaling the HPCG benchmark on the newest
+                generation sunway supercomputer with 42 million heterogeneous
+                cores,” in SC ’21: The International Conference for High Performance
+                Computing, Networking, Storage and Analysis, St. Louis, Missouri,
+                USA, November 14 - 19, 2021, B. R. de Supinski, M. W. Hall, and
+                T. Gamblin, Eds. ACM, 2021, pp. 57:1–57:13. [Online]. Available:
+                https://doi.org/10.1145/3458817.3476158</li>
+        </ol>
+    </article>
+    <article>
+        <h4 class="headings">ADDENDUMS</h4>
+        <p>
+            <ul>
+                <li>h1-h4 tags: These are the header tags which are used for headings.</li>
+                <li>p tag: Tags for a paragarph.</li>
+                <li>br tag: Tag for line break, self closing tag.</li>
+                <li>div tag: Block tag to create a block</li>
+                <li>img tag: Used to insert images, when specified a path.</li>
+                <li>ol tag: Used to create ordered list.</li>
+                <li>li tag: Deifnes a list item.</li>
+                <li>ul tag: Used to create a  unordered list.</li>
+
+            </ul>
+        </p>
+
+    </article>
+</body>
