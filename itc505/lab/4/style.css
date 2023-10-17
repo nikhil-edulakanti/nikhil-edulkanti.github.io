@@ -1,0 +1,29 @@
+h1,
+h4.headings {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: aliceblue;
+}
+body {
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: black;
+}
+p,
+ol,
+ul {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: azure;
+}
+div.side {
+  display: flex;
+  justify-content: space-evenly;
+}
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
