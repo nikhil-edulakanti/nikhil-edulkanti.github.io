@@ -1,4 +1,4 @@
-grid-container{
+.grid-container{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     column-gap: 30px;
@@ -43,16 +43,16 @@ main{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius: 1px solid #ddd;
 }
-benz{
+.benz{
     color: aquamarine;
 }
-ferrari{
+.ferrari{
     color: red;
 }
 body{
     background-color: darkgrey;
 }
-team{
+.team{
 
     background-color: #d42d2d; 
     border: none;
