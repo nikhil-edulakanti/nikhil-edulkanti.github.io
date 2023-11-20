@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Choose Your Adventure</title>
+  </head>
+  <body>
+    <header>
+      <h1>Choose Your Adventure</h1>
+      <p style="text-align: center">
+        This is an adventure, choose your path to embrace the magic.
+      </p>
+    </header>
+    <main>
+      <div id="story"></div>
+      <div id="choices"></div>
+      <div id="image-container">
+        <img id="story-image" src="pictures" alt="Story Image" />
+      </div>
+    </main>
+    <script src="script.js"></script>
+    <footer>
+      <h4 style="text-align: center">ADDENDUMS</h4>
+      <ul>
+        <li>HTML CONTENT</li>
+        <p>
+          The html content is far simple. I have used some heading tags and some
+          div tags to establish a structure.
+        </p>
+        <li>STYLING</li>
+        <p>
+          This CSS code defines the styling for a web-based interactive story
+          application. It utilizes the `@font-face` rule to import the custom
+          font "TradeWindsRegular.ttf" and applies it to the `tradewinds` font
+          family. The body uses the default "Arial" font with a fallback to
+          sans-serif, a light gray background, and zero margins. The header has
+          a dark background, white text, and centered alignment. The main
+          content area has a maximum width, centered margin, white background,
+          padding, rounded corners, and a subtle box shadow. The
+          `#image-container` centers images with additional styling, and
+          `#story-image` enforces maximum dimensions and border-radius.
+          `#choices` and `#story` center-align text.
+        </p>
+        <li>SCRIPT</li>
+        <p>
+          The JavaScript code establishes a Choose Your Own Adventure game
+          through the `storyStages` object, encapsulating stages, choices, and
+          consequences. The `updatePage` function dynamically modifies HTML
+          content, updating story text, creating choice buttons, and managing
+          image display. To prevent memory leaks, previous event listeners are
+          cleared. `makeChoice` handles player decisions, progressing the
+          narrative by updating the current stage. The `endGame` placeholder
+          denotes potential concluding actions. Attention is required for
+          accurate image file paths and filenames. The code offers a structured
+          architecture for scalable and intricate storytelling, fostering a
+          technically sound and extensible web-based interactive experience.
+        </p>
+      </ul>
+    </footer>
+  </body>
+</html>
