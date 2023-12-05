@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Madlib Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Madlib Game: The Adventure of <span id="title"></span></h1>
+        <form id="madlibForm">
+            <label for="adjective">Adjective:</label>
+            <input type="text" id="adjective" required>
+
+            <label for="noun">Noun (plural):</label>
+            <input type="text" id="noun" required>
+
+            <label for="verb">Verb (ending in -ing):</label>
+            <input type="text" id="verb" required>
+
+            <label for="adverb">Adverb:</label>
+            <input type="text" id="adverb" required>
+
+            <label for="place">Place:</label>
+            <input type="text" id="place" required>
+
+            <button type="button" onclick="generateMadlib()">Generate Madlib</button>
+        </form>
+
+        <div id="madlibStory"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
