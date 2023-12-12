@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lights Out</title>
+</head>
+<body>
+    <div class="container" id="grid-container"></div>
+    
+    <div class="addendums">
+        <h2>Addendums</h2>
+        <ul>
+            <li>
+                <h3>HTML</h3>
+                <p>This is the main HTML file. It includes links to the CSS file (style.css) for styling and the JavaScript file (script.js) for functionality.It contains a div with the class "container" and the id "grid-container" where the grid of cells will be generated.</p>
+            </li>
+            <li>
+                <h3>CSS</h3>
+                <p>This CSS file provides styles for the game.
+                    The body styles center the game board on the page with a dark background color.
+                    The .container class styles the grid container as a 5x5 grid with 50px cells and 5px gap.
+                    The .cell class styles each cell with a default background color and a pointer cursor.
+                    The .cell.active class styles active cells with a different background color to represent the "lights out" state.</p>
+            </li>
+            <li>
+                <h3>JavaScript</h3>
+                <p>The JavaScript code is wrapped in an event listener for the "DOMContentLoaded" event, ensuring that the script runs after the HTML has been fully loaded.
+                    gridSize is set to 5, representing the size of the grid.
+                    The gridContainer variable is assigned the element with the id "grid-container".
+                    A nested loop creates the initial grid of cells inside the gridContainer. Each cell is a div element with the class "cell" and an event listener to call the toggleCell function when clicked.
+                    The toggleCell function toggles the "active" class of the clicked cell and its adjacent cells.
+                    The toggleAdjacentCell function toggles the "active" class of a given cell if it is within the grid bounds.</p>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
